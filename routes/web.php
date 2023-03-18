@@ -27,3 +27,10 @@ Route::get('/contact', [App\Http\Controllers\MainController::class, 'contact'])-
 Route::get('/gallery', [App\Http\Controllers\MainController::class, 'gallery'])->name('gallery');
 Route::get('/mastera', [App\Http\Controllers\MainController::class, 'mastera'])->name('mastera');
 Route::get('/uslugi', [App\Http\Controllers\MainController::class, 'uslugi'])->name('uslugi');
+
+
+    Route::get('/image-upload',  [App\Http\Controllers\ImageUploadController::class, 'index'])->name('image-upload.index');
+Route::get('/image-editor',  [App\Http\Controllers\ImageUploadController::class, 'editor'])->name('image-editor');
+    Route::post('/image-upload', [App\Http\Controllers\ImageUploadController::class, 'upload'])->name('image-upload.post');
+
+
