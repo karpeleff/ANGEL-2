@@ -31,6 +31,11 @@ Route::get('/uslugi', [App\Http\Controllers\MainController::class, 'uslugi'])->n
 
     Route::get('/image-upload',  [App\Http\Controllers\ImageUploadController::class, 'index'])->name('image-upload.index');
 Route::get('/image-editor',  [App\Http\Controllers\ImageUploadController::class, 'editor'])->name('image-editor');
+Route::get('/image-del/{id}',  [App\Http\Controllers\ImageUploadController::class, 'image_delete'])->name('image-delete');
     Route::post('/image-upload', [App\Http\Controllers\ImageUploadController::class, 'upload'])->name('image-upload.post');
+
+Route::get('/message',  [App\Http\Controllers\ImageUploadController::class, 'message_view'])->name('message');
+Route::get('/message_del/{id}',  [App\Http\Controllers\ImageUploadController::class, 'message_del'])->name('message_del');
+Route::post('/message',  [App\Http\Controllers\ImageUploadController::class, 'message_add'])->name('message_add');
 
 

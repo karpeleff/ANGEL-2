@@ -7,31 +7,29 @@
                 <div class="card">
                     <div class="card-header">Админпанель</div>
 
-                    <div class="card-body">
+                    <div class="card-body row align-items-start "   >
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
-                            <div class="card" style="width: 18rem;">
+                         @if($data->count() !== 0)
+                             @foreach($data as $item)
+                                    <div class="card " style="width: 10rem;">
 
-                                <img src="images/1679144235.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Удалить</a>
-                                </div>
-                            </div>
+                                        <img src="images/{{$item->name}}" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">Somcard's content.</p>
+                                            <a href="/image-del/{{$item->id}}" class="btn btn-primary">Удалить</a>
+                                        </div>
+                                    </div>
+                                @endforeach
 
-                            <div class="card" style="width: 10rem;">
+                            @else
+                             <p>Empty</p>
+                             @endif
 
-                                <img src="images/1679144235.jpg" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Somcard's content.</p>
-                                    <a href="#" class="btn btn-primary">Удалить</a>
-                                </div>
-                            </div>
 
 
                     </div>

@@ -33,7 +33,7 @@
 
                                 <img src="images/{{ Session::get('image') }}" width="200px">
                             @endif
-
+                            <br><br>
                             <form action="{{ route('image-upload.post') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">

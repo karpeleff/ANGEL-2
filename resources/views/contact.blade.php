@@ -43,14 +43,17 @@
         </div>
         <div class="row">
             <div class="column">
+
+
                 <img src="https://avatars.mds.yandex.net/i?id=e603f41b9f7042a2328d0f1100970a3e76ea54e0-6484760-images-thumbs&n=13" style="width:100%">
             </div>
             <div class="column">
-                <form action="/action_page.php">
+                <form action="/message"  method="post" >
+                    @csrf
                     <label for="fname">Имя</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                    <input type="text" id="fname" name="name" placeholder="Your name..">
                     <label for="lname">Фамилия</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    <input type="text" id="lname" name="surname" placeholder="Your last name..">
                     <label for="country">Страна</label>
                     <select id="country" name="country">
                         <option value="australia">Россия</option>
@@ -58,7 +61,7 @@
                         <option value="usa">USA</option>
                     </select>
                     <label for="subject">Сщщбщение</label>
-                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:120px"></textarea>
+                    <textarea id="subject" name="text" placeholder="Write something.." style="height:120px"></textarea>
                     <input type="submit" value="Отправить">
                 </form>
             </div>

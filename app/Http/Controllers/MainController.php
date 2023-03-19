@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Img;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -18,9 +19,16 @@ class MainController extends Controller
     {
         return view('contact');
     }
+
+
+
     public function  gallery()
     {
-        return view('gallery');
+
+        $data = Img::all();
+
+        return view('galerea')->with('data',$data);
+
     }
     public function  mastera()
     {

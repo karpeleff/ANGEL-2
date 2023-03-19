@@ -54,10 +54,24 @@
         <h3 class="second-title">галерея наших работ</h3>
         <div class="container">
             <div class="gallery">
-                <figure class="gallery__item gallery__item--1">
-                    <img src="https://avatars.mds.yandex.net/i?id=a90fdb700158b444c62ba5e8c003af41ffa2fa0b-7662997-images-thumbs&n=13" alt="Gallery image 1" class="gallery__img">
-                </figure>
-                <figure class="gallery__item gallery__item--2">
+
+
+
+
+                @if($data->count() !== 0)
+                    @foreach($data as $item)
+                        <figure class="">
+                            <img src="images/{{$item->name}}" alt="Gallery image 1" class="gallery__img">
+                        </figure>
+                    @endforeach
+
+                @else
+                    <p>Empty</p>
+            @endif
+
+
+
+             <!--   <figure class="gallery__item gallery__item--2">
                     <img src="https://avatars.mds.yandex.net/i?id=5db238530f229da1f6af409d49af986e4a0c70e9-8544486-images-thumbs&n=13" alt="Gallery image 2" class="gallery__img">
                 </figure>
                 <figure class="gallery__item gallery__item--3">
@@ -71,7 +85,7 @@
                 </figure>
                 <figure class="gallery__item gallery__item--6">
                     <img src="https://avatars.mds.yandex.net/i?id=d84e0b1d668669836ab5f14ea3d6c91b51cc2337-8497133-images-thumbs&n=13" alt="Gallery image 6" class="gallery__img">
-                </figure>
+                </figure>   -->
             </div>
         </div>
     </section>
