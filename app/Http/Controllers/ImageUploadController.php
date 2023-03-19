@@ -10,6 +10,11 @@ use App\Models\Note;
 
 class ImageUploadController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('image-upload.index');
@@ -38,12 +43,9 @@ class ImageUploadController extends Controller
             File::delete(public_path('images/'.$file));
         }
 
-
         return  redirect('image-editor');
 
-
     }
-
 
     public function upload(ImageUploadRequest $request)
     {
