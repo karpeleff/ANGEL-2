@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Админпанель</div>
+                    <div class="card-header">Редактор</div>
 
                     <div class="card-body row align-items-start "   >
                         @if (session('status'))

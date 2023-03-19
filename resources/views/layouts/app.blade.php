@@ -33,17 +33,23 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        <div class="dropdown">
-                            <a class="btn btn-info dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Основное меню
-                            </a>
 
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="image-editor">Редактор</a></li>
-                                <li><a class="dropdown-item" href="home">Добавление фото</a></li>
-                                <li><a class="dropdown-item" href="message">Сообщения с сайта </a></li>
-                            </ul>
-                        </div>
+
+                        @if(Auth::check() && Auth::user()->is_admin)
+                            <div class="dropdown">
+                                <a class="btn btn-info dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Основное меню
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="image-editor">Редактор</a></li>
+                                    <li><a class="dropdown-item" href="home">Добавление фото</a></li>
+                                    <li><a class="dropdown-item" href="message">Сообщения с сайта </a></li>
+                                </ul>
+                            </div>
+                        @endif
+
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->

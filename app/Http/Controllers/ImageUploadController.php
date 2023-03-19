@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ImageUploadRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Models\Img;
 use App\Models\Note;
@@ -13,6 +14,8 @@ class ImageUploadController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+
     }
 
     public function index()
@@ -21,9 +24,17 @@ class ImageUploadController extends Controller
     }
     public function editor()
     {
-        $data = Img::all();
 
-        return view('editor')->with('data',$data);
+        if(Auth::check() && Auth::user()->is_admin==0)
+        {
+            return view('user');
+        }else{
+            $data = Img::all();
+
+            return view('editor')->with('data',$data);
+        }
+
+
     }
 
     public  function  image_delete($id)
@@ -67,8 +78,14 @@ class ImageUploadController extends Controller
 
     public function  message_view()
     {
-        $data = Note::all();
-        return view('message')->with('data',$data);
+        if(Auth::check() && Auth::user()->is_admin==0)
+        {
+            return view('user');
+        }else{
+            $data = Note::all();
+            return view('message')->with('data',$data);
+        }
+
     }
 
 public function  message_add(Request $request)
