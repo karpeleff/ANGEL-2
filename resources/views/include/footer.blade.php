@@ -16,6 +16,10 @@
             <a href="{{route('mastera')}}">Мастера</a>
 
             <a href="{{route('contact')}}">Контакты</a>
+
+            <a href="{{route('register')}}">Регистрация</a>
+
+            <a href="{{route('login')}}">Вход</a>
         </p>
 
         <p class="footer-company-name">Company Name © 2015</p>
